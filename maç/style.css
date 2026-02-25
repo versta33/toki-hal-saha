@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 0, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    background: linear-gradient(135deg, #FFD700, #FFA500, #FF4500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 50px;
+    font-size: 3em;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 2px;
+}
+
+.teams-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.team {
+    flex: 1;
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+}
+
+.team h2 {
+    color: #FFD700;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.team-a h2 {
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.team-b h2 {
+    color: #ff3366;
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+}
+
+.players {
+    margin-bottom: 25px;
+}
+
+.player {
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    color: #fff;
+    padding: 14px 20px;
+    margin: 12px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    border-left: 3px solid #FFD700;
+    font-weight: 500;
+    font-size: 1.05em;
+}
+
+.player:hover {
+    transform: translateX(8px);
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.vs {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #FFD700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: pulse 2s infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.referee {
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px 30px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.referee p {
+    margin: 5px 0;
+    font-size: 0.4em;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.referee-name {
+    font-size: 0.5em !important;
+    color: #fff !important;
+    margin-top: 10px !important;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.bet-button {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #000;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bet-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+    background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+}
+
+.bet-button:active {
+    transform: translateY(-1px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+    margin: 10% auto;
+    padding: 50px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 550px;
+    position: relative;
+    animation: slideIn 0.3s;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.modal-content h2 {
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #FFD700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close:hover {
+    color: #FF4500;
+    transform: rotate(90deg);
+}
+
+.iban-info {
+    text-align: center;
+}
+
+.iban-info h2 {
+    color: #667eea;
+    margin-bottom: 30px;
+}
+
+.iban-info p {
+    margin: 15px 0;
+    font-size: 1.1em;
+    color: #FFD700;
+    font-weight: 600;
+}
+
+.iban {
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%);
+    padding: 20px;
+    border-radius: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3em;
+    color: #FFD700;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.description {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #1a1a2e;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1.4em;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .teams-container {
+        flex-direction: column;
+    }
+    
+    .vs {
+        transform: rotate(90deg);
+    }
+}

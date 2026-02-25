@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Bahis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Futbol Maçı Bahis</h1>
+        
+        <div class="teams-container">
+            <div class="team team-a">
+                <h2>⚽ A Takımı</h2>
+                <div class="players">
+                    <div class="player">👤 Talip</div>
+                    <div class="player">👤 Efe</div>
+                    <div class="player">👤 Bahri</div>
+                    <div class="player">👤 Utku</div>
+                    <div class="player">👤 Ahmet Hoca</div>
+                    <div class="player">👤 Burak</div>
+                    <div class="player">👤 Eren</div>
+                </div>
+                <button class="bet-button" onclick="showBet('A Takımı')">💰 Bahis Yap</button>
+            </div>
+
+            <div class="vs">⚡ VS ⚡
+                <div class="referee">
+                    <p>🎽 HAKEM</p>
+                    <p class="referee-name">Hayrettin Hoca</p>
+                </div>
+            </div>
+
+            <div class="team team-b">
+                <h2>⚽ B Takımı</h2>
+                <div class="players">
+                    <div class="player">👤 Hidayet Hoca</div>
+                    <div class="player">👤 Ahmetsaim</div>
+                    <div class="player">👤 Özkan Hoca</div>
+                    <div class="player">👤 Said</div>
+                    <div class="player">👤 Alper King</div>
+                    <div class="player">👤 Yusuf</div>
+                    <div class="player">👤 Ferhat Hoca</div>
+                </div>
+                <button class="bet-button" onclick="showBet('B Takımı')">💰 Bahis Yap</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="betModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Bahis Bilgileri</h2>
+            <div class="iban-info">
+                <p><strong>İsim Soy İsim:</strong></p>
+                <p class="iban">Eren Gaznepoğlu</p>
+                <p><strong>IBAN:</strong></p>
+                <p class="iban">TR66 0086 9000 0000 0387 7564 37</p>
+                <p><strong>Açıklama:</strong></p>
+                <p id="teamName" class="description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
